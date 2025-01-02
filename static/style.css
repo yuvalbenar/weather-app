@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #0074d9;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.weather-container {
+    margin: 2rem auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+.weather-container form {
+    margin-bottom: 1rem;
+}
+
+.weather-container input {
+    padding: 0.5rem;
+    width: 60%;
+}
+
+.weather-container button {
+    padding: 0.5rem 1rem;
+    background-color: #0074d9;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.weather-container button:hover {
+    background-color: #005bb5;
+}
+
+.weather-result {
+    margin-top: 1rem;
+}
+
+.error {
+    color: red;
+}
+
+.winter-facts {
+    margin-top: 2rem;
+}
+
+.winter-facts ul {
+    list-style-type: square;
+    padding-left: 1.5rem;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Weather App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .weather-container {
+            margin: 20px auto;
+            width: 50%;
+        }
+        input[type="text"] {
+            width: 70%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .error {
+            color: red;
+            margin-top: 20px;
+        }
+        .weather-result img {
+            height: 100px;
+        }
+        .winter-facts {
+            margin-top: 20px;
+        }
+        .winter-facts ul {
+            list-style: none;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple Weather App</h1>
+    <div class="weather-container">
+        <form method="POST">
+            <input type="text" name="city_country" placeholder="Enter city, country (e.g., London, UK)" value="{{ city_country }}">
+            <button type="submit">Get Weather</button>
+        </form>
+
+        {% if weather %}
+            {% if weather.error %}
+                <p class="error">{{ weather.error }}</p>
+            {% else %}
+                <div class="weather-result">
+                    <h2>Weather in {{ weather.city }}, {{ weather.country }}</h2>
+                    <p><img src="http://openweathermap.org/img/wn/{{ weather.icon }}@2x.png" alt="Weather icon"></p>
+                    <p>Temperature: {{ weather.temperature }}°C</p>
+                    <p>Description: {{ weather.description }}</p>
+                </div>
+            {% endif %}
+        {% endif %}
+
+        <div class="winter-facts">
+            <h3>Winter Facts</h3>
+            <ul>
+                {% for fact in facts %}
+                    <li>{{ fact }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Winter Wonders</p>
+    </footer>
+</body>
+</html>
