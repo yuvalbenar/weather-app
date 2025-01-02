@@ -3,7 +3,7 @@ import requests
 
 app = Flask(__name__)
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=5001)
 
 # Your OpenWeather API key
 API_KEY = "878aa4daa96b54c229b7f0388991c1dc"
@@ -44,4 +44,4 @@ def index():
     return render_template('index.html', weather=weather, facts=winter_facts, city_country=city_country)
 
 if __name__ == '__main__':
-    app.run(debug=True,host="0.0.0.0",port=5000)
+    app.run(debug=True,host="0.0.0.0",port=5001)
