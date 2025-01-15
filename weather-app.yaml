@@ -16,9 +16,9 @@ spec:
     spec:
       containers:
       - name: weather-app
-        image: yuvalbenar/weathertraining-app:latest # Replace 'latest' with specific tag if needed
+        image: yuvalbenar/weathertraining-app:latest
         ports:
-        - containerPort: 5001
+        - containerPort: 5000  # Update to match the app's port
         env:
         - name: FLASK_ENV
           value: "production"
@@ -34,4 +34,4 @@ spec:
   ports:
   - protocol: TCP
     port: 80
-    targetPort: 5001
+    targetPort: 5000  # Update to match the app's port
